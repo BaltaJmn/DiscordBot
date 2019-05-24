@@ -38,10 +38,18 @@ client.on('message', msg => {
     msg.reply(msg.author.displayAvatarURL);
   }
 
-  if (msg.content === '!yoshi') {
+  if (msg.content === '!dracukeo') {
     msg.member.voiceChannel.join().then(connection => {
       // You can play a file or a stream here:
-      const dispatcher = connection.playFile('./sounds/yoshi.mp3');
+      const dispatcher = connection.playFile('./sounds/dracukeo.mp3');
+      dispatcher.resume();
+    });
+  }
+
+  if (msg.content === '!radiador') {
+    msg.member.voiceChannel.join().then(connection => {
+      // You can play a file or a stream here:
+      const dispatcher = connection.playFile('./sounds/radiador.mp3');
       dispatcher.resume();
     });
   }
@@ -65,6 +73,12 @@ client.on('message', msg => {
 
   if (msg.content === '!despacito') {
     msg.channel.send('DESPACITO DESPACITO', {
+      tts: true
+    });
+  }
+
+  if (msg.content === '!frase') {
+    msg.channel.send('Varo eres gilipollas', {
       tts: true
     });
   }
